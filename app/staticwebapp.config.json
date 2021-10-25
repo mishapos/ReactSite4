@@ -1,0 +1,25 @@
+{
+	"routes": [
+		{
+			"route": "/login",
+			"rewrite": "/.auth/login/aad?post_login_redirect_uri=/post_login%23post_login"
+		},
+		{
+			"route": "/logout",
+			"redirect": "/.auth/logout?post_logout_redirect_uri=/post_logout%23post_logout"
+		},
+		{
+			"route": "/about",
+			"redirect": "/#about"
+		},
+		{
+			"route": "/pricing",
+			"redirect": "/index.html#pricing"
+		}
+	],
+	"responseOverrides": {
+		"404": {
+			"rewrite": "/index.html#404"
+		}
+	}
+}
