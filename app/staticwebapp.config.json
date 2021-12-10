@@ -15,11 +15,54 @@
 		{
 			"route": "/pricing",
 			"redirect": "/index.html#pricing"
+		},
+		{
+			"route": "/wildcard/*.{js.gz}",
+			"headers": {
+				"TestHeader": "gzip header"
+			}
+		},
+		{
+			"route": "/wildcard/*.{js.br}",
+			"headers": {
+				"TestHeader": "brotli header"
+			}
+		},
+		{
+			"route": "/wildcard/*.{js}",
+			"headers": {
+				"TestHeader": "js header"
+			}
+		},
+		{
+			"route": "/wildcard/*.{min.js}",
+			"headers": {
+				"TestHeader": "minified js header"
+			}
+		},
+		{
+			"route": "/wildcard/*.{min.css}",
+			"headers": {
+				"TestHeader": "minified css header"
+			}
+		},
+		{
+			"route": "/content",
+			"headers": {
+				"Content-Type": "text/custom-content-type",
+				"Content-Encoding": "deflate"
+			}
 		}
 	],
 	"responseOverrides": {
 		"404": {
 			"redirect": "/index.html#404"
 		}
+	},
+	"mimeTypes": {
+		".json": "text/custom-json",
+		".json.br": "text/custom-br-json",
+		".json.gz": "text/custom-gz-json",
+		".json.min": "text/custom-min-json"
 	}
 }
