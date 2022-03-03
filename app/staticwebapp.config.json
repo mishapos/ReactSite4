@@ -1,68 +1,13 @@
 {
-	"routes": [
-		{
-			"route": "/login",
-			"rewrite": "/.auth/login/aad?post_login_redirect_uri=/post_login%23post_login"
-		},
-		{
-			"route": "/logout",
-			"redirect": "/.auth/logout?post_logout_redirect_uri=/post_logout%23post_logout"
-		},
-		{
-			"route": "/about",
-			"redirect": "/#about"
-		},
-		{
-			"route": "/pricing",
-			"redirect": "/index.html#pricing"
-		},
-		{
-			"route": "/wildcard/*.{js.gz}",
-			"headers": {
-				"TestHeader": "gzip header"
-			}
-		},
-		{
-			"route": "/wildcard/*.{js.br}",
-			"headers": {
-				"TestHeader": "brotli header"
-			}
-		},
-		{
-			"route": "/wildcard/*.{js}",
-			"headers": {
-				"TestHeader": "js header"
-			}
-		},
-		{
-			"route": "/wildcard/*.{min.js}",
-			"headers": {
-				"TestHeader": "minified js header"
-			}
-		},
-		{
-			"route": "/wildcard/*.{min.css}",
-			"headers": {
-				"TestHeader": "minified css header"
-			}
-		},
-		{
-			"route": "/content",
-			"headers": {
-				"Content-Type": "text/custom-content-type",
-				"Content-Encoding": "deflate"
-			}
-		}
-	],
-	"responseOverrides": {
-		"404": {
-			"redirect": "/index.html#404"
-		}
-	},
-	"mimeTypes": {
-		".json": "text/custom-json",
-		".json.br": "text/custom-br-json",
-		".json.gz": "text/custom-gz-json",
-		".json.min": "text/custom-min-json"
-	}
+  "auth": {
+    "identityProviders": {
+      "azureActiveDirectory": {
+        "registration": {
+          "openIdIssuer": "https://login.microsoftonline.com/72f988bf-86f1-41af-91ab-2d7cd011db47/v2.0",
+          "clientIdSettingName": "AZURE_CLIENT_ID",
+          "clientSecretSettingName": "AZURE_CLIENT_SECRET"
+        }
+      }
+    }
+  }
 }
