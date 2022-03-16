@@ -20,7 +20,7 @@
       let response = await fetch(`api/GetGreeting?name=Staging`);
       let message = await response.text();
 
-      document.querySelector("#message").innerHTML = message.text
+      document.querySelector("#message").innerHTML = message
     })();
   </script>
 
