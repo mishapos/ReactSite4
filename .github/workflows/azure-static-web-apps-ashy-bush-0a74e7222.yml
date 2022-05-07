@@ -34,7 +34,7 @@ jobs:
           deployment_environment: "${{ github.ref_name == 'main' && 'default' || 'staging' }}"
           ###### End of Repository/Build Configurations ######
       - name: print url
-        run: echo ${{ steps.buildanddeploy.output.static_web_app_url }} 
+        run: echo ${{ steps.builddeploy.output.static_web_app_url }} 
         
 
   close_pull_request_job:
